@@ -100,7 +100,9 @@ jobs:
 
   linux-aarch:
     runs-on: ubuntu-latest
-    container: ghcr.io/rust-cross/manylinux_2_28-cross:aarch64 
+    container:
+      image: ghcr.io/rust-cross/manylinux_2_28-cross:aarch64
+      options: --platform linux/arm64
     strategy:
       matrix:
         python-version: [[39, "3.9"], [310, "3.10"], [311, "3.11"], [312, "3.12"]]
